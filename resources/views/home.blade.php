@@ -1,43 +1,28 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends("layouts.app")
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Movie</title>
+@section("main-content")
 
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<main class="bg-dark">
+    <div class="container">
+        <div class="row pt-5">
 
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-
-    <main>
-        <div class="container">
-            <div class="row mt-5">
-
-                @foreach($movies as $movie)
-                    <div class="col-4 mb-3">
-                        <div class="card">
-                            <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            <div class="card-body">
-                                <h5 class="card-title">{{$movie->title}}</h5>
-                                <p class="card-text">Data: {{$movie->date}}, Voto: {{$movie->vote}}</p>
-                            </div>
-                        </div>
+            @foreach($movies as $movie)
+            <div class="col-4 mb-3">
+                <div class="card">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{$movie->title}}</h5>
+                        <p class="card-text">Data: {{$movie->date}}, Voto: {{$movie->vote}}</p>
                     </div>
-                @endforeach
-            
+                </div>
             </div>
-            
+            @endforeach
+
         </div>
-    </main>
 
-</body>
+    </div>
+</main>
 
-</html>
+
+@endsection
