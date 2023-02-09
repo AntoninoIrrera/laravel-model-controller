@@ -18,14 +18,24 @@
 <body>
 
     <main>
+        <div class="container">
+            <div class="row mt-5">
 
-        @foreach($movies as $movie)
-
-            <p> {{$movie->title}} </p>
-
-        @endforeach
-
-
+                @foreach($movies as $movie)
+                    <div class="col-4 mb-3">
+                        <div class="card">
+                            <!-- <img src="..." class="card-img-top" alt="..."> -->
+                            <div class="card-body">
+                                <h5 class="card-title">{{$movie->title}}</h5>
+                                <p class="card-text">Data: {{$movie->date}}, Voto: {{$movie->vote}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            
+            </div>
+            
+        </div>
     </main>
 
 </body>
